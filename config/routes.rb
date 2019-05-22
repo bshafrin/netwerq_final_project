@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Work sector resource:
+
+  # CREATE
+  get("/work_sectors/new", { :controller => "work_sectors", :action => "new_form" })
+  post("/create_work_sector", { :controller => "work_sectors", :action => "create_row" })
+
+  # READ
+  get("/work_sectors", { :controller => "work_sectors", :action => "index" })
+  get("/work_sectors/:id_to_display", { :controller => "work_sectors", :action => "show" })
+
+  # UPDATE
+  get("/work_sectors/:prefill_with_id/edit", { :controller => "work_sectors", :action => "edit_form" })
+  post("/update_work_sector/:id_to_modify", { :controller => "work_sectors", :action => "update_row" })
+
+  # DELETE
+  get("/delete_work_sector/:id_to_remove", { :controller => "work_sectors", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Company resource:
 
   # CREATE
