@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @company_location.present? %>
+  <% if @company_location.errors.any? %>
+    <% @company_location.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new company location
+</h1>
+
+
+<hr>
+
+<!-- Form company_location start -->
+<form action="/create_company_location" method="post">
+<!-- Form company_location end -->
+
+  <!-- Label and input for company_id start -->
+  <div class="form-group">
+    <label for="company_id">
+      Company
+    </label>
+
+    <!-- Input for company_id start -->
+    <input type="text" id="company_id" name="company_id" class="form-control" value="<%= @company_location.company_id %>">
+    <!-- Input for company_id end -->
+  </div>
+  <!-- Label and input for company_id end -->
+
+  <!-- Label and input for city_id start -->
+  <div class="form-group">
+    <label for="city_id">
+      City
+    </label>
+
+    <!-- Input for city_id start -->
+    <input type="text" id="city_id" name="city_id" class="form-control" value="<%= @company_location.city_id %>">
+    <!-- Input for city_id end -->
+  </div>
+  <!-- Label and input for city_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create company location
+  </button>
+</form>
+
+<hr>
+
+<a href="/company_locations">
+  Go back
+</a>

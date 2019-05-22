@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Company location resource:
+
+  # CREATE
+  get("/company_locations/new", { :controller => "company_locations", :action => "new_form" })
+  post("/create_company_location", { :controller => "company_locations", :action => "create_row" })
+
+  # READ
+  get("/company_locations", { :controller => "company_locations", :action => "index" })
+  get("/company_locations/:id_to_display", { :controller => "company_locations", :action => "show" })
+
+  # UPDATE
+  get("/company_locations/:prefill_with_id/edit", { :controller => "company_locations", :action => "edit_form" })
+  post("/update_company_location/:id_to_modify", { :controller => "company_locations", :action => "update_row" })
+
+  # DELETE
+  get("/delete_company_location/:id_to_remove", { :controller => "company_locations", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Contact method resource:
 
   # CREATE

@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Company location #<%= @company_location.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/company_locations" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link company_location start -->
+      <div class="col">
+        <a href="/company_locations/<%= @company_location.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit company location
+        </a>
+      </div>
+      <!-- Edit link company_location end -->
+
+      <!-- Delete link company_location start -->
+      <div class="col">
+        <a href="/delete_company_location/<%= @company_location.id %>" class="btn btn-block btn-outline-secondary">
+          Delete company location
+        </a>
+      </div>
+      <!-- Delete link company_location end -->
+    </div>
+
+    <dl>
+      <dt>
+        Company
+      </dt>
+      <!-- Display company_id start -->
+      <dd>
+        <%= @company_location.company_id %>
+      </dd>
+      <!-- Display company_id end -->
+
+      <dt>
+        City
+      </dt>
+      <!-- Display city_id start -->
+      <dd>
+        <%= @company_location.city_id %>
+      </dd>
+      <!-- Display city_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@company_location.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@company_location.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
