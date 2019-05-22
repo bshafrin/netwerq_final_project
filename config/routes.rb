@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Outreach resource:
+
+  # CREATE
+  get("/outreaches/new", { :controller => "outreaches", :action => "new_form" })
+  post("/create_outreach", { :controller => "outreaches", :action => "create_row" })
+
+  # READ
+  get("/outreaches", { :controller => "outreaches", :action => "index" })
+  get("/outreaches/:id_to_display", { :controller => "outreaches", :action => "show" })
+
+  # UPDATE
+  get("/outreaches/:prefill_with_id/edit", { :controller => "outreaches", :action => "edit_form" })
+  post("/update_outreach/:id_to_modify", { :controller => "outreaches", :action => "update_row" })
+
+  # DELETE
+  get("/delete_outreach/:id_to_remove", { :controller => "outreaches", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the City resource:
 
   # CREATE

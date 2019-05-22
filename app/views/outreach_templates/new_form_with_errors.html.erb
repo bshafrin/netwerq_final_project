@@ -1,0 +1,79 @@
+<!-- Validation failure messages -->
+<% if @outreach.present? %>
+  <% if @outreach.errors.any? %>
+    <% @outreach.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new outreach
+</h1>
+
+
+<hr>
+
+<!-- Form outreach start -->
+<form action="/create_outreach" method="post">
+<!-- Form outreach end -->
+
+  <!-- Label and input for recipient_id start -->
+  <div class="form-group">
+    <label for="recipient_id">
+      Recipient
+    </label>
+
+    <!-- Input for recipient_id start -->
+    <input type="text" id="recipient_id" name="recipient_id" class="form-control" value="<%= @outreach.recipient_id %>">
+    <!-- Input for recipient_id end -->
+  </div>
+  <!-- Label and input for recipient_id end -->
+
+  <!-- Label and input for notes start -->
+  <div class="form-group">
+    <label for="notes">
+      Notes
+    </label>
+
+    <!-- Input for notes start -->
+    <textarea id="notes" name="notes" class="form-control" rows="3"><%= @outreach.notes %></textarea>
+    <!-- Input for notes end -->
+  </div>
+  <!-- Label and input for notes end -->
+
+  <!-- Label and input for response_tf start -->
+  <div class="form-check">
+    <input type="hidden" value="0" name="response_tf">
+    <!-- Input for response_tf start -->
+    <input id="response_tf" class="form-check-input" name="response_tf" type="checkbox" <%= "checked" if @outreach.response_tf %>>
+    <!-- Input for response_tf end -->
+    <label for="response_tf" class="form-check-label">
+      Response tf
+    </label>
+  </div>
+
+  <!-- Label and input for outreach_method_id start -->
+  <div class="form-group">
+    <label for="outreach_method_id">
+      Outreach method
+    </label>
+
+    <!-- Input for outreach_method_id start -->
+    <input type="text" id="outreach_method_id" name="outreach_method_id" class="form-control" value="<%= @outreach.outreach_method_id %>">
+    <!-- Input for outreach_method_id end -->
+  </div>
+  <!-- Label and input for outreach_method_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create outreach
+  </button>
+</form>
+
+<hr>
+
+<a href="/outreaches">
+  Go back
+</a>

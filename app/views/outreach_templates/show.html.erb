@@ -1,0 +1,91 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Outreach #<%= @outreach.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/outreaches" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link outreach start -->
+      <div class="col">
+        <a href="/outreaches/<%= @outreach.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit outreach
+        </a>
+      </div>
+      <!-- Edit link outreach end -->
+
+      <!-- Delete link outreach start -->
+      <div class="col">
+        <a href="/delete_outreach/<%= @outreach.id %>" class="btn btn-block btn-outline-secondary">
+          Delete outreach
+        </a>
+      </div>
+      <!-- Delete link outreach end -->
+    </div>
+
+    <dl>
+      <dt>
+        Recipient
+      </dt>
+      <!-- Display recipient_id start -->
+      <dd>
+        <%= @outreach.recipient_id %>
+      </dd>
+      <!-- Display recipient_id end -->
+
+      <dt>
+        Notes
+      </dt>
+      <!-- Display notes start -->
+      <dd>
+        <%= @outreach.notes %>
+      </dd>
+      <!-- Display notes end -->
+
+      <dt>
+        Response tf
+      </dt>
+      <!-- Display response_tf start -->
+      <dd>
+        <%= @outreach.response_tf %>
+      </dd>
+      <!-- Display response_tf end -->
+
+      <dt>
+        Outreach method
+      </dt>
+      <!-- Display outreach_method_id start -->
+      <dd>
+        <%= @outreach.outreach_method_id %>
+      </dd>
+      <!-- Display outreach_method_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@outreach.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@outreach.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
