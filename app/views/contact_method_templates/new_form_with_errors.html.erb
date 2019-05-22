@@ -1,0 +1,44 @@
+<!-- Validation failure messages -->
+<% if @contact_method.present? %>
+  <% if @contact_method.errors.any? %>
+    <% @contact_method.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new contact method
+</h1>
+
+
+<hr>
+
+<!-- Form contact_method start -->
+<form action="/create_contact_method" method="post">
+<!-- Form contact_method end -->
+
+  <!-- Label and input for method_name start -->
+  <div class="form-group">
+    <label for="method_name">
+      Method name
+    </label>
+
+    <!-- Input for method_name start -->
+    <input type="text" id="method_name" name="method_name" class="form-control" value="<%= @contact_method.method_name %>">
+    <!-- Input for method_name end -->
+  </div>
+  <!-- Label and input for method_name end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create contact method
+  </button>
+</form>
+
+<hr>
+
+<a href="/contact_methods">
+  Go back
+</a>

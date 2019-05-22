@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Contact method resource:
+
+  # CREATE
+  get("/contact_methods/new", { :controller => "contact_methods", :action => "new_form" })
+  post("/create_contact_method", { :controller => "contact_methods", :action => "create_row" })
+
+  # READ
+  get("/contact_methods", { :controller => "contact_methods", :action => "index" })
+  get("/contact_methods/:id_to_display", { :controller => "contact_methods", :action => "show" })
+
+  # UPDATE
+  get("/contact_methods/:prefill_with_id/edit", { :controller => "contact_methods", :action => "edit_form" })
+  post("/update_contact_method/:id_to_modify", { :controller => "contact_methods", :action => "update_row" })
+
+  # DELETE
+  get("/delete_contact_method/:id_to_remove", { :controller => "contact_methods", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Outreach resource:
 
   # CREATE

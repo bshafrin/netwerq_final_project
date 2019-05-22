@@ -1,0 +1,64 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Contact method #<%= @contact_method.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/contact_methods" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link contact_method start -->
+      <div class="col">
+        <a href="/contact_methods/<%= @contact_method.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit contact method
+        </a>
+      </div>
+      <!-- Edit link contact_method end -->
+
+      <!-- Delete link contact_method start -->
+      <div class="col">
+        <a href="/delete_contact_method/<%= @contact_method.id %>" class="btn btn-block btn-outline-secondary">
+          Delete contact method
+        </a>
+      </div>
+      <!-- Delete link contact_method end -->
+    </div>
+
+    <dl>
+      <dt>
+        Method name
+      </dt>
+      <!-- Display method_name start -->
+      <dd>
+        <%= @contact_method.method_name %>
+      </dd>
+      <!-- Display method_name end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@contact_method.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@contact_method.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
