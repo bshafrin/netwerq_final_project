@@ -1,6 +1,6 @@
 class ContactMethodsController < ApplicationController
   def index
-    @contact_methods = ContactMethod.all
+    @contact_methods = ContactMethod.page(params[:page]).per(10)
 
     render("contact_method_templates/index.html.erb")
   end

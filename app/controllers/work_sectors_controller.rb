@@ -1,6 +1,6 @@
 class WorkSectorsController < ApplicationController
   def index
-    @work_sectors = WorkSector.all
+    @work_sectors = WorkSector.page(params[:page]).per(10)
 
     render("work_sector_templates/index.html.erb")
   end

@@ -1,6 +1,6 @@
 class OutreachesController < ApplicationController
   def index
-    @outreaches = Outreach.all
+    @outreaches = Outreach.page(params[:page]).per(10)
 
     render("outreach_templates/index.html.erb")
   end
