@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @work_sector.present? %>
   <% if @work_sector.errors.any? %>
     <% @work_sector.errors.full_messages.each do |message| %>
@@ -16,21 +15,15 @@
 
 <hr>
 
-<!-- Form work_sector start -->
 <form action="/create_work_sector" method="post">
-<!-- Form work_sector end -->
 
-  <!-- Label and input for sector_name start -->
   <div class="form-group">
     <label for="sector_name">
       Sector name
     </label>
 
-    <!-- Input for sector_name start -->
     <input type="text" id="sector_name" name="sector_name" class="form-control" value="<%= @work_sector.sector_name %>">
-    <!-- Input for sector_name end -->
   </div>
-  <!-- Label and input for sector_name end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create work sector

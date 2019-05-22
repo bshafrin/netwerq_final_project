@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @person.outreaches.each do |outreach| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/outreaches/<%= outreach.id %>">
           <%= outreach.recipient_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_outreach_from_recipient/<%= outreach.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="person_outreaches_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "person_templates/person_outreaches_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

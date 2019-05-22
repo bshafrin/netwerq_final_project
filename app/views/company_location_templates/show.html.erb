@@ -11,28 +11,23 @@
         </a>
       </div>
 
-      <!-- Edit link company_location start -->
       <div class="col">
         <a href="/company_locations/<%= @company_location.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit company location
         </a>
       </div>
-      <!-- Edit link company_location end -->
 
-      <!-- Delete link company_location start -->
       <div class="col">
         <a href="/delete_company_location/<%= @company_location.id %>" class="btn btn-block btn-outline-secondary">
           Delete company location
         </a>
       </div>
-      <!-- Delete link company_location end -->
     </div>
 
     <dl>
       <dt>
         Company
       </dt>
-      <!-- Display company_id start -->
       <dd>
         <% if @company_location.company.present? %>
           <a href="/companies/<%= @company_location.company_id %>">
@@ -40,12 +35,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display company_id end -->
 
       <dt>
         City
       </dt>
-      <!-- Display city_id start -->
       <dd>
         <% if @company_location.city.present? %>
           <a href="/cities/<%= @company_location.city_id %>">
@@ -53,28 +46,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display city_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@company_location.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@company_location.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

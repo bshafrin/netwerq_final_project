@@ -1,23 +1,14 @@
-<!-- Form company_location start -->
 <form action="/create_company_location_from_company" method="post">
-<!-- Form company_location end -->
 
-  <!-- Label and input for company_id start -->
-  <!-- Input for company_id start -->
   <input type="hidden" name="company_id" value="<%= @company.id %>">
-  <!-- Input for company_id end -->
 
-  <!-- Label and input for city_id start -->
   <div class="form-group">
     <label for="city_id">
       City
     </label>
 
-    <!-- Input for city_id start -->
     <%= select_tag(:city_id, options_from_collection_for_select(City.all, :id, :city_name, @company_location.city_id), :class => "form-control") %>
-    <!-- Input for city_id end -->
   </div>
-  <!-- Label and input for city_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create company location

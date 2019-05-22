@@ -11,46 +11,37 @@
         </a>
       </div>
 
-      <!-- Edit link person start -->
       <div class="col">
         <a href="/people/<%= @person.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit person
         </a>
       </div>
-      <!-- Edit link person end -->
 
-      <!-- Delete link person start -->
       <div class="col">
         <a href="/delete_person/<%= @person.id %>" class="btn btn-block btn-outline-secondary">
           Delete person
         </a>
       </div>
-      <!-- Delete link person end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @person.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Title
       </dt>
-      <!-- Display title start -->
       <dd>
         <%= @person.title %>
       </dd>
-      <!-- Display title end -->
 
       <dt>
         Company
       </dt>
-      <!-- Display company_id start -->
       <dd>
         <% if @person.company.present? %>
           <a href="/companies/<%= @person.company_id %>">
@@ -58,21 +49,17 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display company_id end -->
 
       <dt>
         Relationship
       </dt>
-      <!-- Display relationship start -->
       <dd>
         <%= @person.relationship %>
       </dd>
-      <!-- Display relationship end -->
 
       <dt>
         Work sector
       </dt>
-      <!-- Display work_sector_id start -->
       <dd>
         <% if @person.work_sector.present? %>
           <a href="/work_sectors/<%= @person.work_sector_id %>">
@@ -80,12 +67,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display work_sector_id end -->
 
       <dt>
         City
       </dt>
-      <!-- Display city_id start -->
       <dd>
         <% if @person.city.present? %>
           <a href="/cities/<%= @person.city_id %>">
@@ -93,60 +78,47 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display city_id end -->
 
       <dt>
         Email
       </dt>
-      <!-- Display email start -->
       <dd>
         <%= @person.email %>
       </dd>
-      <!-- Display email end -->
 
       <dt>
         Phone number
       </dt>
-      <!-- Display phone_number start -->
       <dd>
         <%= @person.phone_number %>
       </dd>
-      <!-- Display phone_number end -->
 
       <dt>
         Contacts
       </dt>
-      <!-- Display contacts start -->
       <dd>
         <%= @person.contacts %>
       </dd>
-      <!-- Display contacts end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@person.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@person.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "person_templates/person_outreaches" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

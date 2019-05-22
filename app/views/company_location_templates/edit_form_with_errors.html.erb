@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @company_location.errors.any? %>
   <% @company_location.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,33 +12,23 @@
 
 <hr>
 
-<!-- Form company_location start -->
 <form action="/update_company_location/<%= @company_location.id %>" method="post">
-<!-- Form company_location end -->
 
-  <!-- Label and input for company_id start -->
   <div class="form-group">
     <label for="company_id">
       Company
     </label>
 
-    <!-- Input for company_id start -->
     <%= select_tag(:company_id, options_from_collection_for_select(Company.all, :id, :company_name, @company_location.company_id), :class => "form-control") %>
-    <!-- Input for company_id end -->
   </div>
-  <!-- Label and input for company_id end -->
 
-  <!-- Label and input for city_id start -->
   <div class="form-group">
     <label for="city_id">
       City
     </label>
 
-    <!-- Input for city_id start -->
     <%= select_tag(:city_id, options_from_collection_for_select(City.all, :id, :city_name, @company_location.city_id), :class => "form-control") %>
-    <!-- Input for city_id end -->
   </div>
-  <!-- Label and input for city_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update company location

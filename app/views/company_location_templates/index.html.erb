@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "company_location_templates/company_locations_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -54,13 +50,10 @@
 
       <% @company_locations.each do |company_location| %>
       <tr>
-        <!-- Display company_location.id start -->
         <td>
           <%= company_location.id %>
         </td>
-        <!-- Display company_location.id end -->
 
-        <!-- Display company_location.company_id start -->
         <td>
           <% if company_location.company.present? %>
             <a href="/companies/<%= company_location.company.id %>">
@@ -68,9 +61,7 @@
             </a>
           <% end %>
         </td>
-        <!-- Display company_location.company_id end -->
 
-        <!-- Display company_location.city_id start -->
         <td>
           <% if company_location.city.present? %>
             <a href="/cities/<%= company_location.city.id %>">
@@ -78,19 +69,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display company_location.city_id end -->
 
-        <!-- Display company_location.created_at start -->
         <td>
           <%= time_ago_in_words(company_location.created_at) %> ago
         </td>
-        <!-- Display company_location.created_at end -->
 
-        <!-- Display company_location.updated_at start -->
         <td>
           <%= time_ago_in_words(company_location.updated_at) %> ago
         </td>
-        <!-- Display company_location.updated_at end -->
 
         <td>
           <a href="/company_locations/<%= company_location.id %>">

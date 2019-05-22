@@ -1,107 +1,70 @@
-<!-- Form person start -->
 <form action="/create_person_from_company" method="post">
-<!-- Form person end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @person.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for title start -->
   <div class="form-group">
     <label for="title">
       Title
     </label>
 
-    <!-- Input for title start -->
     <input type="text" id="title" name="title" class="form-control" value="<%= @person.title %>">
-    <!-- Input for title end -->
   </div>
-  <!-- Label and input for title end -->
 
-  <!-- Label and input for company_id start -->
-  <!-- Input for company_id start -->
   <input type="hidden" name="company_id" value="<%= @company.id %>">
-  <!-- Input for company_id end -->
 
-  <!-- Label and input for relationship start -->
   <div class="form-group">
     <label for="relationship">
       Relationship
     </label>
 
-    <!-- Input for relationship start -->
     <input type="text" id="relationship" name="relationship" class="form-control" value="<%= @person.relationship %>">
-    <!-- Input for relationship end -->
   </div>
-  <!-- Label and input for relationship end -->
 
-  <!-- Label and input for work_sector_id start -->
   <div class="form-group">
     <label for="work_sector_id">
       Work sector
     </label>
 
-    <!-- Input for work_sector_id start -->
     <%= select_tag(:work_sector_id, options_from_collection_for_select(WorkSector.all, :id, :sector_name, @person.work_sector_id), :class => "form-control") %>
-    <!-- Input for work_sector_id end -->
   </div>
-  <!-- Label and input for work_sector_id end -->
 
-  <!-- Label and input for city_id start -->
   <div class="form-group">
     <label for="city_id">
       City
     </label>
 
-    <!-- Input for city_id start -->
     <%= select_tag(:city_id, options_from_collection_for_select(City.all, :id, :city_name, @person.city_id), :class => "form-control") %>
-    <!-- Input for city_id end -->
   </div>
-  <!-- Label and input for city_id end -->
 
-  <!-- Label and input for email start -->
   <div class="form-group">
     <label for="email">
       Email
     </label>
 
-    <!-- Input for email start -->
     <input type="text" id="email" name="email" class="form-control" value="<%= @person.email %>">
-    <!-- Input for email end -->
   </div>
-  <!-- Label and input for email end -->
 
-  <!-- Label and input for phone_number start -->
   <div class="form-group">
     <label for="phone_number">
       Phone number
     </label>
 
-    <!-- Input for phone_number start -->
     <input type="text" id="phone_number" name="phone_number" class="form-control" value="<%= @person.phone_number %>">
-    <!-- Input for phone_number end -->
   </div>
-  <!-- Label and input for phone_number end -->
 
-  <!-- Label and input for contacts start -->
   <div class="form-group">
     <label for="contacts">
       Contacts
     </label>
 
-    <!-- Input for contacts start -->
     <input type="text" id="contacts" name="contacts" class="form-control" value="<%= @person.contacts %>">
-    <!-- Input for contacts end -->
   </div>
-  <!-- Label and input for contacts end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create person
