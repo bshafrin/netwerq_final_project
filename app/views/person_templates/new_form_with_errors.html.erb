@@ -75,7 +75,7 @@
     </label>
 
     <!-- Input for work_sector_id start -->
-    <input type="text" id="work_sector_id" name="work_sector_id" class="form-control" value="<%= @person.work_sector_id %>">
+    <%= select_tag(:work_sector_id, options_from_collection_for_select(WorkSector.all, :id, :sector_name, @person.work_sector_id), :class => "form-control") %>
     <!-- Input for work_sector_id end -->
   </div>
   <!-- Label and input for work_sector_id end -->
