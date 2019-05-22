@@ -34,7 +34,11 @@
       </dt>
       <!-- Display company_id start -->
       <dd>
-        <%= @company_location.company_id %>
+        <% if @company_location.company.present? %>
+          <a href="/companies/<%= @company_location.company_id %>">
+            <%= @company_location.company.company_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display company_id end -->
 
@@ -43,7 +47,11 @@
       </dt>
       <!-- Display city_id start -->
       <dd>
-        <%= @company_location.city_id %>
+        <% if @company_location.city.present? %>
+          <a href="/cities/<%= @company_location.city_id %>">
+            <%= @company_location.city.city_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display city_id end -->
 

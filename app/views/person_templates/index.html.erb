@@ -98,7 +98,11 @@
 
         <!-- Display person.company_id start -->
         <td>
-          <%= person.company.company_name %>
+          <% if person.company.present? %>
+            <a href="/companies/<%= person.company.id %>">
+              <%= person.company.company_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display person.company_id end -->
 
@@ -110,13 +114,21 @@
 
         <!-- Display person.work_sector_id start -->
         <td>
-          <%= person.work_sector.sector_name %>
+          <% if person.work_sector.present? %>
+            <a href="/work_sectors/<%= person.work_sector.id %>">
+              <%= person.work_sector.sector_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display person.work_sector_id end -->
 
         <!-- Display person.city_id start -->
         <td>
-          <%= person.city.city_name %>
+          <% if person.city.present? %>
+            <a href="/cities/<%= person.city.id %>">
+              <%= person.city.city_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display person.city_id end -->
 

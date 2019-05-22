@@ -58,13 +58,21 @@
 
         <!-- Display company_location.company_id start -->
         <td>
-          <%= company_location.company.company_name %>
+          <% if company_location.company.present? %>
+            <a href="/companies/<%= company_location.company.id %>">
+              <%= company_location.company.company_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display company_location.company_id end -->
 
         <!-- Display company_location.city_id start -->
         <td>
-          <%= company_location.city.city_name %>
+          <% if company_location.city.present? %>
+            <a href="/cities/<%= company_location.city.id %>">
+              <%= company_location.city.city_name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display company_location.city_id end -->
 

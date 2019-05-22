@@ -34,7 +34,11 @@
       </dt>
       <!-- Display recipient_id start -->
       <dd>
-        <%= @outreach.recipient_id %>
+        <% if @outreach.recipient.present? %>
+          <a href="/people/<%= @outreach.recipient_id %>">
+            <%= @outreach.recipient.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display recipient_id end -->
 
@@ -61,7 +65,11 @@
       </dt>
       <!-- Display outreach_method_id start -->
       <dd>
-        <%= @outreach.outreach_method_id %>
+        <% if @outreach.outreach_method.present? %>
+          <a href="/contact_methods/<%= @outreach.outreach_method_id %>">
+            <%= @outreach.outreach_method.method_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display outreach_method_id end -->
 

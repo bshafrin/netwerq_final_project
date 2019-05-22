@@ -52,7 +52,11 @@
       </dt>
       <!-- Display company_id start -->
       <dd>
-        <%= @person.company_id %>
+        <% if @person.company.present? %>
+          <a href="/companies/<%= @person.company_id %>">
+            <%= @person.company.company_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display company_id end -->
 
@@ -70,7 +74,11 @@
       </dt>
       <!-- Display work_sector_id start -->
       <dd>
-        <%= @person.work_sector_id %>
+        <% if @person.work_sector.present? %>
+          <a href="/work_sectors/<%= @person.work_sector_id %>">
+            <%= @person.work_sector.sector_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display work_sector_id end -->
 
@@ -79,7 +87,11 @@
       </dt>
       <!-- Display city_id start -->
       <dd>
-        <%= @person.city_id %>
+        <% if @person.city.present? %>
+          <a href="/cities/<%= @person.city_id %>">
+            <%= @person.city.city_name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display city_id end -->
 
