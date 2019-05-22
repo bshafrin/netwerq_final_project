@@ -1,4 +1,6 @@
 ActiveAdmin.register Outreach do
+
+ permit_params :recipient_id, :notes, :response_tf, :outreach_method_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
