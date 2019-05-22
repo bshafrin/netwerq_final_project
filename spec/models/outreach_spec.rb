@@ -4,6 +4,8 @@ RSpec.describe Outreach, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:outreach_method) }
+
     it { should belong_to(:recipient) }
 
     end
