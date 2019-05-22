@@ -6,6 +6,7 @@ class WorkSectorsController < ApplicationController
   end
 
   def show
+    @person = Person.new
     @work_sector = WorkSector.find(params.fetch("id_to_display"))
 
     render("work_sector_templates/show.html.erb")

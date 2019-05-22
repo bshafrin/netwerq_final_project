@@ -1,0 +1,47 @@
+<!-- Form outreach start -->
+<form action="/create_outreach_from_contact_method" method="post">
+<!-- Form outreach end -->
+
+  <!-- Label and input for recipient_id start -->
+  <div class="form-group">
+    <label for="recipient_id">
+      Recipient
+    </label>
+
+    <!-- Input for recipient_id start -->
+    <input type="text" id="recipient_id" name="recipient_id" class="form-control" value="<%= @outreach.recipient_id %>">
+    <!-- Input for recipient_id end -->
+  </div>
+  <!-- Label and input for recipient_id end -->
+
+  <!-- Label and input for notes start -->
+  <div class="form-group">
+    <label for="notes">
+      Notes
+    </label>
+
+    <!-- Input for notes start -->
+    <textarea id="notes" name="notes" class="form-control" rows="3"><%= @outreach.notes %></textarea>
+    <!-- Input for notes end -->
+  </div>
+  <!-- Label and input for notes end -->
+
+  <!-- Label and input for response_tf start -->
+  <div class="form-group">
+    <label for="response_tf">
+      Response tf
+    </label>
+    <!-- Input for response_tf start -->
+    <input id="response_tf" class="form-check-input" name="response_tf" type="checkbox" <%= "checked" if @outreach.response_tf %>>
+    <!-- Input for response_tf end -->
+  </div>
+
+  <!-- Label and input for outreach_method_id start -->
+  <!-- Input for outreach_method_id start -->
+  <input type="hidden" name="outreach_method_id" value="<%= @contact_method.id %>">
+  <!-- Input for outreach_method_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create outreach
+  </button>
+</form>

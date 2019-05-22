@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/company_locations/new", { :controller => "company_locations", :action => "new_form" })
   post("/create_company_location", { :controller => "company_locations", :action => "create_row" })
+  post("/create_company_location_from_city", { :controller => "company_locations", :action => "create_row_from_city" })
+  post("/create_company_location_from_company", { :controller => "company_locations", :action => "create_row_from_company" })
 
   # READ
   get("/company_locations", { :controller => "company_locations", :action => "index" })
@@ -46,6 +48,8 @@ Rails.application.routes.draw do
   # CREATE
   get("/outreaches/new", { :controller => "outreaches", :action => "new_form" })
   post("/create_outreach", { :controller => "outreaches", :action => "create_row" })
+  post("/create_outreach_from_contact_method", { :controller => "outreaches", :action => "create_row_from_contact_method" })
+  post("/create_outreach_from_person", { :controller => "outreaches", :action => "create_row_from_person" })
 
   # READ
   get("/outreaches", { :controller => "outreaches", :action => "index" })
@@ -124,6 +128,9 @@ Rails.application.routes.draw do
   # CREATE
   get("/people/new", { :controller => "people", :action => "new_form" })
   post("/create_person", { :controller => "people", :action => "create_row" })
+  post("/create_person_from_city", { :controller => "people", :action => "create_row_from_city" })
+  post("/create_person_from_work_sector", { :controller => "people", :action => "create_row_from_work_sector" })
+  post("/create_person_from_company", { :controller => "people", :action => "create_row_from_company" })
 
   # READ
   get("/people", { :controller => "people", :action => "index" })

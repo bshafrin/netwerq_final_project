@@ -1,0 +1,25 @@
+<!-- Form company_location start -->
+<form action="/create_company_location_from_city" method="post">
+<!-- Form company_location end -->
+
+  <!-- Label and input for company_id start -->
+  <div class="form-group">
+    <label for="company_id">
+      Company
+    </label>
+
+    <!-- Input for company_id start -->
+    <input type="text" id="company_id" name="company_id" class="form-control" value="<%= @company_location.company_id %>">
+    <!-- Input for company_id end -->
+  </div>
+  <!-- Label and input for company_id end -->
+
+  <!-- Label and input for city_id start -->
+  <!-- Input for city_id start -->
+  <input type="hidden" name="city_id" value="<%= @city.id %>">
+  <!-- Input for city_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create company location
+  </button>
+</form>

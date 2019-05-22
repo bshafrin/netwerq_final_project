@@ -6,6 +6,7 @@ class ContactMethodsController < ApplicationController
   end
 
   def show
+    @outreach = Outreach.new
     @contact_method = ContactMethod.find(params.fetch("id_to_display"))
 
     render("contact_method_templates/show.html.erb")

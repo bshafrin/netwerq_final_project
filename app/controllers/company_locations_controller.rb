@@ -32,6 +32,36 @@ class CompanyLocationsController < ApplicationController
     end
   end
 
+  def create_row_from_company
+    @company_location = CompanyLocation.new
+
+    @company_location.company_id = params.fetch("company_id")
+    @company_location.city_id = params.fetch("city_id")
+
+    if @company_location.valid?
+      @company_location.save
+
+      redirect_to("/companies/#{@company_location.company_id}", notice: "CompanyLocation created successfully.")
+    else
+      render("company_location_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_city
+    @company_location = CompanyLocation.new
+
+    @company_location.company_id = params.fetch("company_id")
+    @company_location.city_id = params.fetch("city_id")
+
+    if @company_location.valid?
+      @company_location.save
+
+      redirect_to("/cities/#{@company_location.city_id}", notice: "CompanyLocation created successfully.")
+    else
+      render("company_location_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @company_location = CompanyLocation.find(params.fetch("prefill_with_id"))
 

@@ -6,6 +6,8 @@ class CitiesController < ApplicationController
   end
 
   def show
+    @company_location = CompanyLocation.new
+    @person = Person.new
     @city = City.find(params.fetch("id_to_display"))
 
     render("city_templates/show.html.erb")

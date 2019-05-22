@@ -34,6 +34,40 @@ class OutreachesController < ApplicationController
     end
   end
 
+  def create_row_from_person
+    @outreach = Outreach.new
+
+    @outreach.recipient_id = params.fetch("recipient_id")
+    @outreach.notes = params.fetch("notes")
+    @outreach.response_tf = params.fetch("response_tf")
+    @outreach.outreach_method_id = params.fetch("outreach_method_id")
+
+    if @outreach.valid?
+      @outreach.save
+
+      redirect_to("/people/#{@outreach.recipient_id}", notice: "Outreach created successfully.")
+    else
+      render("outreach_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_contact_method
+    @outreach = Outreach.new
+
+    @outreach.recipient_id = params.fetch("recipient_id")
+    @outreach.notes = params.fetch("notes")
+    @outreach.response_tf = params.fetch("response_tf")
+    @outreach.outreach_method_id = params.fetch("outreach_method_id")
+
+    if @outreach.valid?
+      @outreach.save
+
+      redirect_to("/contact_methods/#{@outreach.outreach_method_id}", notice: "Outreach created successfully.")
+    else
+      render("outreach_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @outreach = Outreach.find(params.fetch("prefill_with_id"))
 
