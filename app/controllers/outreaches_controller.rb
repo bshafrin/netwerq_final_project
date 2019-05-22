@@ -57,6 +57,22 @@ class OutreachesController < ApplicationController
     end
   end
 
+  def destroy_row_from_recipient
+    @outreach = Outreach.find(params.fetch("id_to_remove"))
+
+    @outreach.destroy
+
+    redirect_to("/people/#{@outreach.recipient_id}", notice: "Outreach deleted successfully.")
+  end
+
+  def destroy_row_from_outreach_method
+    @outreach = Outreach.find(params.fetch("id_to_remove"))
+
+    @outreach.destroy
+
+    redirect_to("/contact_methods/#{@outreach.outreach_method_id}", notice: "Outreach deleted successfully.")
+  end
+
   def destroy_row
     @outreach = Outreach.find(params.fetch("id_to_remove"))
 

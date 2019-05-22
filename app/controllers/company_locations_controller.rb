@@ -53,6 +53,22 @@ class CompanyLocationsController < ApplicationController
     end
   end
 
+  def destroy_row_from_company
+    @company_location = CompanyLocation.find(params.fetch("id_to_remove"))
+
+    @company_location.destroy
+
+    redirect_to("/companies/#{@company_location.company_id}", notice: "CompanyLocation deleted successfully.")
+  end
+
+  def destroy_row_from_city
+    @company_location = CompanyLocation.find(params.fetch("id_to_remove"))
+
+    @company_location.destroy
+
+    redirect_to("/cities/#{@company_location.city_id}", notice: "CompanyLocation deleted successfully.")
+  end
+
   def destroy_row
     @company_location = CompanyLocation.find(params.fetch("id_to_remove"))
 

@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_company_location/:id_to_remove", { :controller => "company_locations", :action => "destroy_row" })
+  get("/delete_company_location_from_city/:id_to_remove", { :controller => "company_locations", :action => "destroy_row_from_city" })
+  get("/delete_company_location_from_company/:id_to_remove", { :controller => "company_locations", :action => "destroy_row_from_company" })
 
   #------------------------------
 
@@ -55,6 +57,8 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_outreach/:id_to_remove", { :controller => "outreaches", :action => "destroy_row" })
+  get("/delete_outreach_from_outreach_method/:id_to_remove", { :controller => "outreaches", :action => "destroy_row_from_outreach_method" })
+  get("/delete_outreach_from_recipient/:id_to_remove", { :controller => "outreaches", :action => "destroy_row_from_recipient" })
 
   #------------------------------
 
@@ -131,6 +135,9 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_person/:id_to_remove", { :controller => "people", :action => "destroy_row" })
+  get("/delete_person_from_city/:id_to_remove", { :controller => "people", :action => "destroy_row_from_city" })
+  get("/delete_person_from_work_sector/:id_to_remove", { :controller => "people", :action => "destroy_row_from_work_sector" })
+  get("/delete_person_from_company/:id_to_remove", { :controller => "people", :action => "destroy_row_from_company" })
 
   #------------------------------
 

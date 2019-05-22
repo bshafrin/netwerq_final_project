@@ -67,6 +67,30 @@ class PeopleController < ApplicationController
     end
   end
 
+  def destroy_row_from_company
+    @person = Person.find(params.fetch("id_to_remove"))
+
+    @person.destroy
+
+    redirect_to("/companies/#{@person.company_id}", notice: "Person deleted successfully.")
+  end
+
+  def destroy_row_from_work_sector
+    @person = Person.find(params.fetch("id_to_remove"))
+
+    @person.destroy
+
+    redirect_to("/work_sectors/#{@person.work_sector_id}", notice: "Person deleted successfully.")
+  end
+
+  def destroy_row_from_city
+    @person = Person.find(params.fetch("id_to_remove"))
+
+    @person.destroy
+
+    redirect_to("/cities/#{@person.city_id}", notice: "Person deleted successfully.")
+  end
+
   def destroy_row
     @person = Person.find(params.fetch("id_to_remove"))
 
