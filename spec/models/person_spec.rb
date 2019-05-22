@@ -4,6 +4,8 @@ RSpec.describe Person, type: :model do
   
     describe "Direct Associations" do
 
+    it { should have_many(:outreaches) }
+
     end
 
     describe "InDirect Associations" do
