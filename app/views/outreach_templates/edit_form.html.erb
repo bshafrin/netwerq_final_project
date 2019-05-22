@@ -50,7 +50,7 @@
     </label>
 
     <!-- Input for outreach_method_id start -->
-    <input type="text" id="outreach_method_id" name="outreach_method_id" class="form-control" value="<%= @outreach.outreach_method_id %>">
+    <%= select_tag(:outreach_method_id, options_from_collection_for_select(ContactMethod.all, :id, :method_name, @outreach.outreach_method_id), :class => "form-control") %>
     <!-- Input for outreach_method_id end -->
   </div>
   <!-- Label and input for outreach_method_id end -->
