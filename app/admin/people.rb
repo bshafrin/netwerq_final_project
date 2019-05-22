@@ -1,4 +1,6 @@
 ActiveAdmin.register Person do
+
+ permit_params :name, :title, :company_id, :relationship, :work_sector_id, :city_id, :email, :phone_number, :contacts
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
