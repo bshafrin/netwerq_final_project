@@ -1,6 +1,9 @@
 class Person < ApplicationRecord
   # Direct associations
 
+  belongs_to :city,
+             :counter_cache => true
+
   belongs_to :work_sector,
              :required => false,
              :counter_cache => true
