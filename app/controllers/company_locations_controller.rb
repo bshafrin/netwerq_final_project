@@ -1,6 +1,7 @@
 class CompanyLocationsController < ApplicationController
   def index
-    @company_locations = CompanyLocation.page(params[:page]).per(10)
+    @q = CompanyLocation.ransack(params[:q])
+    @company_locations = @q.result(:distinct => true).includes(:company, :city).page(params[:page]).per(10)
 
     render("company_location_templates/index.html.erb")
   end

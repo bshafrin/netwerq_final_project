@@ -1,6 +1,7 @@
 class ContactMethodsController < ApplicationController
   def index
-    @contact_methods = ContactMethod.page(params[:page]).per(10)
+    @q = ContactMethod.ransack(params[:q])
+    @contact_methods = @q.result(:distinct => true).includes(:outreaches).page(params[:page]).per(10)
 
     render("contact_method_templates/index.html.erb")
   end

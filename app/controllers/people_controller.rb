@@ -1,6 +1,7 @@
 class PeopleController < ApplicationController
   def index
-    @people = Person.page(params[:page]).per(10)
+    @q = Person.ransack(params[:q])
+    @people = @q.result(:distinct => true).includes(:outreaches, :company, :work_sector, :city).page(params[:page]).per(10)
 
     render("person_templates/index.html.erb")
   end

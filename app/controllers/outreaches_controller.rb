@@ -1,6 +1,7 @@
 class OutreachesController < ApplicationController
   def index
-    @outreaches = Outreach.page(params[:page]).per(10)
+    @q = Outreach.ransack(params[:q])
+    @outreaches = @q.result(:distinct => true).includes(:recipient, :outreach_method).page(params[:page]).per(10)
 
     render("outreach_templates/index.html.erb")
   end

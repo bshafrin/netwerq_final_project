@@ -1,6 +1,7 @@
 class WorkSectorsController < ApplicationController
   def index
-    @work_sectors = WorkSector.page(params[:page]).per(10)
+    @q = WorkSector.ransack(params[:q])
+    @work_sectors = @q.result(:distinct => true).includes(:people).page(params[:page]).per(10)
 
     render("work_sector_templates/index.html.erb")
   end
